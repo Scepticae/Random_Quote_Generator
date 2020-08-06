@@ -1,11 +1,26 @@
-const quoteContainer = document.getElementById('');
+const quoteContainer = document.getElementById('quote-container');
 const quoteText = document.getElementById('quote');
 const quoteAuthor = document.getElementById('author');
 const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
+const loader = document.getElementById('loader');
+
+// Loader
+function loading(){
+    loader.hidden = false;
+    quoteContainer.hidden = true;
+}
+
+function loadComplete() {
+    if(loader.hidden != true){
+        loader.hidden = true;
+        quoteContainer.hidden = false;
+    }
+}
 
 // Get Quote from API
 async function getQuote(){
+    loading();
     const proxyURL = 'https://mighty-lake-28697.herokuapp.com/';
     const apiURL = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
     try {
@@ -21,7 +36,8 @@ async function getQuote(){
             quoteAuthor.innerText = 'Unknown Author';
         } else {
             quoteAuthor.innerText = data.quoteAuthor; 
-        }  
+        }
+        loadComplete();  
     } catch (error) {
         getQuote();
     }

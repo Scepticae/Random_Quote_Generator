@@ -9,15 +9,15 @@
     <title>Random Quote Generator</title>
 </head>
 <body>
-    <div class="quote-container">
+    <div class="quote-container" id="quote-container">
         <!-- Quote -->
         <div class="quote-text">
             <i class="fas fa-quote-left"></i>
-            <span id="quote">Default</span>
+            <span id="quote"></span>
         </div>
         <!-- Authors -->
         <div class="quote-author">
-            <span id="author">Default</span>
+            <span id="author"></span>
         </div>
         <!-- Buttons -->
         <div class="buttons-container">
@@ -27,6 +27,11 @@
             <button class="new-quote-button" id="new-quote" title="Get New Quote!">New Quote</button>
         </div>
     </div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader"></div>
+
+    <!-- Scripts -->
     <script src="JS/index.js"></script>
 </body>
 </html>
