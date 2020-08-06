@@ -1,6 +1,6 @@
-const guoteContainer = document.getElementById('');
-const guoteText = document.getElementById('quote');
-const guoteAuthor = document.getElementById('author');
+const quoteContainer = document.getElementById('');
+const quoteText = document.getElementById('quote');
+const quoteAuthor = document.getElementById('author');
 const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
 
